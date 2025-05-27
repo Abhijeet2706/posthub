@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 30 33% 98%;
+    --foreground: 24 10% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 24 10% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 24 10% 10%;
+    --primary: 24 94% 50%;
+    --primary-foreground: 60 9% 98%;
+    --secondary: 60 4% 95%;
+    --secondary-foreground: 24 10% 10%;
+    --muted: 60 4% 95%;
+    --muted-foreground: 25 5% 45%;
+    --accent: 60 4% 95%;
+    --accent-foreground: 24 10% 10%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 60 9% 98%;
+    --border: 20 5% 90%;
+    --input: 20 5% 90%;
+    --ring: 24 94% 50%;
+    --chart-1: 24 94% 50%;
+    --chart-2: 215 90% 58%;
+    --chart-3: 155 86% 47%;
+    --chart-4: 269 94% 52%;
+    --chart-5: 307 100% 50%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 24 10% 10%;
+    --foreground: 60 9% 98%;
+    --card: 24 13% 12%;
+    --card-foreground: 60 9% 98%;
+    --popover: 24 13% 12%;
+    --popover-foreground: 60 9% 98%;
+    --primary: 24 94% 50%;
+    --primary-foreground: 60 9% 98%;
+    --secondary: 12 6% 15%;
+    --secondary-foreground: 60 9% 98%;
+    --muted: 12 6% 15%;
+    --muted-foreground: 24 5% 65%;
+    --accent: 12 6% 15%;
+    --accent-foreground: 60 9% 98%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 60 9% 98%;
+    --border: 12 6% 25%;
+    --input: 12 6% 25%;
+    --ring: 24 94% 50%;
+    --chart-1: 24 94% 50%;
+    --chart-2: 215 90% 58%;
+    --chart-3: 155 86% 47%;
+    --chart-4: 269 94% 52%;
+    --chart-5: 307 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background-image: 
+      radial-gradient(circle at top right, 
+        hsl(var(--primary) / 0.05) 0%, 
+        transparent 35%),
+      radial-gradient(circle at bottom left, 
+        hsl(var(--primary) / 0.05) 0%, 
+        transparent 35%);
+    background-attachment: fixed;
+  }
+
+  /* Custom skeleton loading animation */
+  .skeleton {
+    @apply bg-muted;
+    background-image: linear-gradient(
+      110deg,
+      hsl(var(--muted)),
+      hsl(var(--muted-foreground) / 0.1) 40%,
+      hsl(var(--muted)) 80%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s linear infinite;
+  }
+}
