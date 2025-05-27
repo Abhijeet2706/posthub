@@ -9,26 +9,26 @@ import { PostSkeletonList } from "./post-skeleton";
 
 export function PostList({ initialPosts = [] }: { initialPosts?: Post[] }) {
   const [posts, setPosts] = useState<Post[]>([]);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(2); // Start from page 2 since page 1 is preloaded
   const [loading, setLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
-  const [hasLoadedLocal, setHasLoadedLocal] = useState(false); // 👈 Track local load
+  const [hasLoadedInitial, setHasLoadedInitial] = useState(false);
   const observer = useRef<IntersectionObserver | null>(null);
   const { toast } = useToast();
 
   useEffect(() => {
-    if (!hasLoadedLocal) {
+    if (!hasLoadedInitial) {
       const local = localStorage.getItem("myPosts");
       const myPosts: Post[] = local ? JSON.parse(local) : [];
-      setPosts(myPosts); // 👈 Only set localStorage posts once
-      setHasLoadedLocal(true);
+      setPosts([...myPosts, ...initialPosts]); // 👈 Merge local + API
+      setHasLoadedInitial(true);
     }
-  }, [hasLoadedLocal]);
+  }, [initialPosts, hasLoadedInitial]);
 
   const fetchPosts = useCallback(async () => {
     try {
       setLoading(true);
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      await new Promise((resolve) => setTimeout(resolve, 1000)); // Optional delay for effect
 
       const newPosts = await getPosts(page);
 
