@@ -4,7 +4,7 @@ A modern and responsive Next.js web application for managing posts, powered by [
 
 ## 🚀 Live Demo
 
-[Visit Website](https://anjali-portfolio-amber.vercel.app/)
+[Visit Website](https://posthub-five.vercel.app/)
 
 Coming soon...
 
@@ -66,8 +66,8 @@ Coming soon...
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/nextjs-posts-manager.git
-cd nextjs-posts-manager
+git clone https://github.com/Abhijeet2706/posthub.git
+cd posthub
 ```
 
 ### 2. Install Dependencies
