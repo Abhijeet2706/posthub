@@ -4,7 +4,7 @@ A modern and responsive Next.js web application for managing posts, powered by [
 
 ## 🚀 Live Demo
 
-[Visit Website](https://posthub-five.vercel.app/)
+[Visit Website](https://anjali-portfolio-amber.vercel.app/)
 
 Coming soon...
 
@@ -73,15 +73,15 @@ cd nextjs-posts-manager
 ### 2. Install Dependencies
 
 ```
-    npm install
+npm install
 # or
 yarn install
 ```
 
-### 3. Run the Development Server
+### 3. Run the Server
+
+`npm run start`
+
+or development server
 
 `npm run dev`
-
-# or
-
-`yarn dev`
