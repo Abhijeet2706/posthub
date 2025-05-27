@@ -28,6 +28,7 @@ export function PostCard({ post }: PostCardProps) {
     } else {
       router.push(`/posts/${post.id}`);
     }
+
   };
 
   return (
